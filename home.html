@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Student Management System</title>
+        <link rel="stylesheet" href="style.css">
+       
+    </head>
+    <center>
+    <h1>Student Form</h1>
+        <body>
+                
+                <form id="Student Form">
+                    Student Student Name:<input type="text" id="Student Name" required><br>
+                    Email:<input type="Email" id="Email" required><br>
+                    Mobile No:<input type="text" id="Mobile" required><br>
+                    Course:<select id="Course">
+                        <option>BCA</option>
+                        <option>BSC</option>
+                        <option>BBA</option>
+                        <option>BCOM</option>
+                        <option>MBA</option>
+                    </select><br>
+                    Gender:<input type="radio" Student Name="Gender" value="male" checked>male
+                           <input type="radio" Student Name="Gender" value="female">Female<br>
+                           <button onclick="addstudent()">Submit</button>
+                </form>
+                <table id="studenttable">
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Course</th>
+                        <th>Gender</th>
+                    </tr>
+
+                </table>
+                <script src="script.js"></script>
+                </center>
+        </body>
+    </html>
