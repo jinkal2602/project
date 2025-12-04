@@ -1,0 +1,100 @@
+<html>
+<head>
+    <title>Student Management System</title>
+    <style>
+        body {
+            background-color: rgb(204, 127, 255);
+            font-family: Arial;
+            margin: 20px;
+        }
+        form, table {
+            width: 50%;
+            margin-bottom: 20px;
+        }
+         button {
+            padding: 8px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+        th {
+            background: #f2f2f2;
+        }
+    </style>
+</head>
+<center>
+<body>
+
+<h2>Student Management System</h2>
+<!-- FORM -->
+<form id="studentForm">
+    <label>Student Name:</label><br>
+    <input type="text" id="name" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" id="email" required><br><br>
+
+    <label>Mobile Number:</label><br>
+    <input type="text" id="mobile" required><br><br>
+
+    <label>Course:</label><br>
+    <select id="course">
+        <option>BCA</option>
+        <option>MCA</option>
+        <option>BBA</option>
+        <option>MBA</option>
+    </select><br><br>
+
+    <label>Gender:</label><br>
+    <input type="radio" name="gender" value="Male" checked> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <br><br>
+
+     <button type="submit">Submit</button>
+</form>
+
+<!-- TABLE -->
+<h3>Added Students</h3>
+<table id="studentTable">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Course</th>
+        <th>Gender</th>
+    </tr>
+</table>
+
+<script>
+    document.getElementById("studentForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let mobile = document.getElementById("mobile").value;
+        let course = document.getElementById("course").value;
+        let gender = document.querySelector("input[name='gender']:checked").value;
+
+        let table = document.getElementById("studentTable");
+        let row = table.insertRow();
+  row.insertCell(0).innerHTML = name;
+        row.insertCell(1).innerHTML = email;
+        row.insertCell(2).innerHTML = mobile;
+        row.insertCell(3).innerHTML = course;
+        row.insertCell(4).innerHTML = gender;
+
+        document.getElementById("studentForm").reset();
+    });
+</script>
+</center>
+</body>
+</html>
